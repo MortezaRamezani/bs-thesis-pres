@@ -10,7 +10,9 @@
     <meta name="description" content="My BSc thesis presentation, powered by impress.js"/>
     <meta name="author" content="Morteza Ramezani"/>
 
+    <link href="css/font.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/impress-progress.css" rel="stylesheet"/>
     <link rel="shortcut icon" href="favicon.png"/>
     <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 </head>
@@ -19,8 +21,45 @@
 <div class="fallback-message">
     <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified
         version of this presentation.</p>
+
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div>
+
+<div id="impress">
+
+    <div id="cover" class="step slide" data-x="0" data-y="0">
+        بهینه‌سازی لایه‌ی میانگیر با استفاده از حافظه‌های غیرفرار
+    </div>
+
+    <div id="toc" class="step slide" data-x="-1800" data-y="0" data-scale="1.5">
+        چه مسایلی بیان خواهد شد؟
+    </div>
+
+    <div class="step slide" data-x="-2200" data-y="1800" data-z="0" data-scale="1.8" data-rotate="90">
+        مقدمه قضیه
+    </div>
+
+    <div class="step slide" data-x="-3300" data-y="1800" data-z="100" data-scale="1.6" data-rotate="90"
+         data-rotate-y="-17.5">
+        salam
+    </div>
+
+    <div class="step slide" data-x="-4300" data-y="1800" data-z="150" data-scale="1.4" data-rotate="90"
+         data-rotate-y="-35">
+        hahahaaaa
+    </div>
+
+    <!--<div id="problem" class="step slide" data-x="-1500" data-y="2400" data-z="500" data-scale="1.5" data-rotate="90">-->
+    <!--کجای قضیه-->
+    <!--</div>-->
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+</div>
+<div class="progressbar"><div></div></div>
+<div class="progress"></div>
+<script src="js/impress-progress.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
 
 </body>
 </html>

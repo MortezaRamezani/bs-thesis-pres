@@ -1,0 +1,15 @@
+/* font declaration*/
+@font-face {
+    font-family: 'Noto Naskh';
+    font-style: normal;
+    font-weight: 400;
+    src: url(NotoNaskhArabic-Regular.ttf) format('truetype');
+}
+
+/* font declaration*/
+@font-face {
+    font-family: 'BBCNasim';
+    font-style: normal;
+    src: url(BBCNassim.otf);
+    src: url(BBCNassim.ttf) format('truetype');
+}
