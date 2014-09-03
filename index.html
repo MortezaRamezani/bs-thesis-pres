@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head lang="fa">
-    <meta charset="UTF-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=1024"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
 
@@ -27,35 +27,434 @@
 
 <div id="impress">
 
-    <div id="cover" class="step slide" data-x="0" data-y="0">
-        بهینه‌سازی لایه‌ی میانگیر با استفاده از حافظه‌های غیرفرار
-    </div>
+<div id="cover" class="step slide" data-x="0" data-y="0">
+    <h4 class="center">
+        <img class="logo" src="images/sharif.jpg">
+        دانشگاه صنعتی شریف - دانشکده مهندسی کامپیوتر
+    </h4>
 
-    <div id="toc" class="step slide" data-x="-1800" data-y="0" data-scale="1.5">
-        چه مسایلی بیان خواهد شد؟
-    </div>
+    <h1 class="center title">
+        بهینه‌سازی لایه‌ی میانگیر سیستم‌عامل با استفاده از حافظه‌های غیرفرار
+    </h1>
 
-    <div class="step slide" data-x="-2200" data-y="1800" data-z="0" data-scale="1.8" data-rotate="90">
-        مقدمه قضیه
-    </div>
+    <h2 class="center author">
+        مرتضی رمضانی
+        <br>
+        استاد راهنما: دکتر حسین اسدی
+    </h2>
 
-    <div class="step slide" data-x="-3300" data-y="1800" data-z="100" data-scale="1.6" data-rotate="90"
-         data-rotate-y="-17.5">
-        salam
-    </div>
+    <h3 class="center date">
+        تابستان ۱۳۹۳
+    </h3>
 
-    <div class="step slide" data-x="-4300" data-y="1800" data-z="150" data-scale="1.4" data-rotate="90"
-         data-rotate-y="-35">
-        hahahaaaa
-    </div>
+</div>
 
-    <!--<div id="problem" class="step slide" data-x="-1500" data-y="2400" data-z="500" data-scale="1.5" data-rotate="90">-->
-    <!--کجای قضیه-->
-    <!--</div>-->
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+<div id="toc" class="step slide" data-x="-1500" data-y="0" data-scale="1.5">
+    <div class="header">
+        مباحث این ارایه
+    </div>
+    <div class="content extra-top">
+        <ul>
+            <li>
+                لایه‌ی میانگیر در سیستم‌عامل (لینوکس)
+            </li>
+            <li>
+                انواع حافظه‌های غیرفرار و ویژگی‌های آنها
+            </li>
+            <li>
+                معماری و الگوریتم پیشنهادی
+            </li>
+            <li>
+                شبیه‌سازی و پیاده‌سازی روش پیشنهادی
+            </li>
+            <li>
+                نتایج آزمایش‌‌های انجام شده
+            </li>
+        </ul>
     </div>
 </div>
-<div class="progressbar"><div></div></div>
+
+<!-- ################## Buffer Cache and Page Cache ################## -->
+<div class="step slide" data-x="-1500" data-y="1800" data-z="0" data-scale="1.8" data-rotate="90">
+    <div class="header">
+        لایه‌ی میانگیر در سیستم عامل
+    </div>
+    <div class="content">
+        <div class="extra-top near-images">
+            <ul>
+                <li>
+                    افزایش حجم داده‌های تولیدی
+                </li>
+                <li>
+                    افزایش استفاده از دیسک‌سخت
+                    <ul>
+                        <li>
+                            فروش ۳۰ میلیارد دلاری
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    تاخیر بالای دیسک‌سخت
+                </li>
+                <li>
+                    راهکار سیستم‌عامل‌ها
+                </li>
+            </ul>
+        </div>
+        <img class="images" src="images/layer-structure.png">
+    </div>
+</div>
+
+<div class="step slide" data-x="-3000" data-y="1800" data-z="100" data-scale="1.6" data-rotate="90"
+     data-rotate-y="-17.5">
+    <div class="header">
+        لایه میانگیر در سیستم عامل (ادامه)
+    </div>
+    <div class="content">
+        <div class="extra-top near-images">
+            <ul>
+                <li>
+                    لایه میانگیر یا حافظه نهان صفحه
+                </li>
+                <li>
+                    معایب حافظه نهان صفحه
+                </li>
+                <li>
+                    بهینه‌سازی
+                    <ul>
+                        <li>
+                            LRU
+                        </li>
+                        <li>
+                            CLOCK, CLOCK-Pro
+                        </li>
+                        <li>
+                            LIRS
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <img class="images" src="images/fs-bpcache.png">
+    </div>
+</div>
+
+
+<!-- ################## NVM and Characteristics ################## -->
+<div class="step slide" data-x="-1500" data-y="3800" data-z="0" data-scale="1.8" data-rotate="90">
+    <div class="header">
+        حافظه های غیر فرار و انواع آن
+    </div>
+    <div class="content">
+        <div>
+            <ul>
+                <li>
+                    حافظه DRAM
+                    <ul>
+                        <li>
+                            بیش‌ترین استفاده به عنوان حافظه‌ی اصلی
+                        </li>
+                        <li>
+                            معایب: توان مصرفی بالا، هزینه زیاد، فرار بودن
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    حافظه تغییر فاز (Phase Change Memory)
+                </li>
+                <li>
+                    حافظه فلش (Flash Memory)
+                </li>
+                <li>
+                    Ferroelectric RAM, Magnetic RAM, Spin-Torque RAM,
+                    Resistive RAM
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="step slide" data-x="-3000" data-y="3800" data-z="100" data-scale="1.6" data-rotate="90"
+     data-rotate-y="-17.5">
+    <div class="header">
+        حافظه های غیر فرار و انواع آن (ادامه)
+    </div>
+    <div class="content center">
+        مقایسه ویژگی‌های حافظه‌های غیرفرار با DRAM
+        <img width="115%" height="auto" style="padding-top: 20px; margin-right: -60px" src="images/nvm-comp.JPG">
+    </div>
+
+</div>
+
+<!-- ################## Proposed Model and Alg. ################## -->
+<div class="step slide" data-x="-1500" data-y="5800" data-z="0" data-scale="1.8" data-rotate="90">
+    <div class="header">
+        روش پیشنهادی
+    </div>
+    <div class="content">
+        <div class="center">
+            <div style="float: left;">
+                معماری پیش‌فرض<br>
+                <img width="100%" src="images/arch-a.png">
+            </div>
+            <div style="float: right;">
+                معماری پیشنهادی<br>
+                <img width="100%" src="images/arch-b.png">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="step slide" data-x="-3000" data-y="5800" data-z="100" data-scale="1.6" data-rotate="90"
+     data-rotate-y="-17.5">
+    <div class="header">
+        روش پیشنهادی (ادامه)
+    </div>
+    <div class="content">
+        <img width="100%" src="images/algo.JPG">
+    </div>
+</div>
+
+<div class="step slide" data-x="-4500" data-y="5800" data-z="100" data-scale="1.6" data-rotate="90"
+     data-rotate-y="-35">
+    <div class="header">
+        روش پیشنهادی (ادامه)
+    </div>
+    <div class="content">
+        <img width="100%" src="images/pagecache-design.png">
+
+        <div>
+            <ul>
+                <li>
+                    رابطه‌ی وزن صفحه‌ها
+                </li>
+            </ul>
+            <img class="equation" src="images/equ.JPG">
+        </div>
+    </div>
+</div>
+
+<!-- ################## Development and Simulator ################## -->
+
+<div class="step slide" data-x="-6000" data-y="5800" data-z="200" data-scale="1.4" data-rotate="90"
+     data-rotate-y="-52.5">
+    <div class="header">
+        پیاده سازی
+    </div>
+    <div class="content">
+        <ul class="extra-top">
+            <li>
+                سیستم‌عامل لینوکس (هسته‌ی ۲.۶.۳۲)
+            </li>
+            <li>
+                شبیه‌ساز حافظه‌ی PCM
+                <ul>
+                    <li>
+                        ماژول قابل بارگزاری در هسته
+                    </li>
+                    <li>
+                        متغیر‌های حافظه
+                    </li>
+                </ul>
+            </li>
+            <li>
+                بارکاری SPEC2006
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--<div class="step slide" data-x="-3000" data-y="7800" data-z="100" data-scale="1.6" data-rotate="90"-->
+<!--data-rotate-y="-17.5">-->
+<!--<div class="header">-->
+<!--پیاده سازی‌ (ادامه)-->
+<!--</div>-->
+
+<!--شبیه ساز پیاده سازی شده-->
+<!--بارهای کاری استفاده شده-->
+
+<!--</div>-->
+
+<!-- ################## Results and Conclusion ################## -->
+
+<div class="step slide" data-x="-1500" data-y="7800" data-z="0" data-scale="1.8" data-rotate="90">
+    <div class="header">
+        نتایج آزمایش‌ها
+    </div>
+    <div class="content">
+        <div class="near-images">
+            <ul>
+                <li>
+                    مقایسه‌ی روش پیشنهادی با حافظه‌ی DRAM با الگوریتم پیش‌فرض
+                </li>
+                <li>
+                    بارهای‌کاری با نسبت نوشتن به خواندن برابر
+                </li>
+                <li>
+                    متغیر‌های ارزیابی شده:
+                    <ul>
+                        <li>
+                            توان مصرفی
+                        </li>
+                        <li>
+                            ضریب برخورد
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    روش محاسبه
+                </li>
+            </ul>
+        </div>
+        <img class="images" style="float: left; margin-top: -5em; padding-top: 0em;" src="images/dram-pcm.JPG">
+    </div>
+</div>
+
+<div class="step slide" data-x="-3000" data-y="7800" data-z="100" data-scale="1.6" data-rotate="90"
+     data-rotate-y="-17.5">
+    <div class="header">
+        نتایج آزمایش‌ها (ادامه)
+    </div>
+    <div class="content">
+        <ul>
+            <li>
+                آستانه مهاجرت (روش محاسبه)
+            </li>
+        </ul>
+        <img width="100%" src="images/mig-thre.jpg">
+    </div>
+
+</div>
+
+<div class="step slide" data-x="-4500" data-y="7800" data-z="200" data-scale="1.5" data-rotate="90"
+     data-rotate-y="-35">
+    <div class="header">
+        نتایج آزمایش‌ها (ادامه)
+    </div>
+    <div class="content">
+        <div class="center">
+            ضریب برخورد برای بارهای کاری مختلف
+        </div>
+        <img width="100%" src="images/hitratio.jpg">
+        <ul>
+            <li>
+                کاهش کمتر از ۲٪
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="step slide" data-x="-6000" data-y="7800" data-z="300" data-scale="1.4" data-rotate="90"
+     data-rotate-y="-52.5">
+    <div class="header">
+        نتایج آزمایش‌ها (ادامه)
+    </div>
+    <div class="content">
+        <div class="center">
+            توان مصرفی برای بارهای کاری مختلف
+        </div>
+        <img width="100%" src="images/power.jpg">
+        <ul>
+            <li>
+                ۱۸٪ کاهش
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- ################## References and Question? ################## -->
+
+<div class="step slide" data-x="-1500" data-y="9800" data-z="0" data-scale="1.8" data-rotate="90">
+    <div class="header">
+        نتیجه گیری
+    </div>
+    <div class="content">
+        <div class="extra-top">
+            <ul>
+                <li>
+                    حافظه ترکیبی در حافظه نهان صفحه سیستم عامل
+                </li>
+                <li>
+                    شبیه‌ساز حافظه‌های غیرفرار
+                </li>
+                <li>
+                    کاهش توان مصرفی
+                </li>
+            </ul>
+            <br>
+            <ul>
+                <li>
+                    کارهای آتی
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="step slide" data-x="-3000" data-y="9800" data-z="100" data-scale="1.6" data-rotate="90"
+     data-rotate-y="-17.5">
+    <div class="header">
+        منابع و مآخذ
+    </div>
+    <div class="refer">
+        <ul>
+            <li>Corbet, J., Rubini, A., and Kroah-Hartman, G. Linux Device Drivers,3rd Edition. O’Reilly Media, Inc.,
+                2005.
+            </li>
+            <li>Mauerer, W. Professional Linux Kernel Architecture. Wiley, 2010.</li>
+            <li>Mogul, J. C., Argollo, E., Shah, M., and Faraboschi, P. Operating system support for nvm+dram hybrid
+                main memory.in Proceedings of the 12th Conference on Hot Topics in Operating Systems (Berkeley, CA, USA,
+                2009).
+            </li>
+            <li>Van Essen, B., Hsieh, H., Ames, S., and Gokhale, M. Di-mmap: A high performance memory-map runtime for
+                data-intensive applications.
+                in High Performance Computing, Networking, Storage and Analysis (SCC), 2012 SC Companion: (Nov
+                2012).
+            </li>
+            <li>Coffman, Jr., E. G., and Denning, P. J. Operating Systems Theory.Prentice Hall Professional Technical
+                Reference, 1973.
+            </li>
+            <li>
+                Park, Y., Park, S. K., and Park, K. H. Linux kernel support to exploit phase change memory. in Linux
+                Symposium (2010), volume 2010.
+            </li>
+            <li>
+                Pirovano, A., Redaelli, A., Pellizzer, F., Ottogalli, F., Tosi, M., Ielmini, D., Lacaita, A., and Bez,
+                R. Reliability study of phase-change nonvolatile memories. Device and Materials Reliability, IEEE
+                Transactions on 4, 3 (Sept 2004), 422–427.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="step slide" data-x="-4500" data-y="9800" data-z="200" data-scale="1.4" data-rotate="90"
+     data-rotate-y="-35">
+    <div class="header">
+        سوال؟
+    </div>
+    <div class="center">
+        <img class="question" src="images/question.jpg">
+    </div>
+</div>
+
+<!-- ################## Overview and Acknowldegment ################## -->
+
+<div id="overview" class="step overview" data-x="2000" data-y="6000" data-rotate="90" data-scale="10">
+    <div class="center overall">
+        با تشکر از توجه شما
+        <div style="padding-top: 1em;">
+            <img width="30%" style="float: left;" src="images/dsn.JPG">
+            <img width="30%" style="float: right;" src="images/impress.jpg">
+        </div>
+    </div>
+</div>
+</div>
+<div class="progressbar">
+    <div></div>
+</div>
 <div class="progress"></div>
 <script src="js/impress-progress.js"></script>
 <script src="js/impress.js"></script>
@@ -63,3 +462,7 @@
 
 </body>
 </html>
+
+<!--<div id="problem" class="step slide" data-x="-1500" data-y="2400" data-z="500" data-scale="1.5" data-rotate="90">-->
+<!--کجای قضیه-->
+<!--</div>-->

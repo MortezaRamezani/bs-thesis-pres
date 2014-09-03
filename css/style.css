@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-    line-height: 1;
+    line-height: 2;
 }
 
 ol, ul {
@@ -82,10 +82,12 @@ table {
 /* Main style start here */
 
 body {
-    font-family: 'Noto Naskh', sans-serif;
-    min-height: 740px;
+    font-family: 'BBCNasim', sans-serif;
+    min-height: 24.5em;
 
-    background: rgb(122, 188, 215);
+    /*background: rgb(116, 19, 215);*/
+    /*background: rgb(102, 102, 102);*/
+    background: rgb(16, 16, 16) url(../images/bg.jpg) repeat center center fixed;
     /*background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));*/
     /*background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
     /*background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));*/
@@ -96,7 +98,7 @@ body {
 
 .step {
     position: relative;
-    width: 1100px;
+    /*width: 30em;*/
     padding: 40px;
     margin: 20px auto;
 
@@ -129,8 +131,8 @@ body {
 .slide {
     display: block;
 
-    width: 40em;
-    height: 25em;
+    width: 30em;
+    height: 21.5em;
     padding: 40px 60px;
 
     background-color: white;
@@ -138,12 +140,131 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 
-    color: rgb(102, 102, 102);
+    color: rgb(34, 34, 34);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 
-    font-family: 'BBCNasim', Arial, sans-serif;
+    /*font-family: 'BBCNasim', Arial, sans-serif;*/
     direction: rtl;
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;
+}
+
+h1{
+    font-size: 2em;
+    line-height: 1.2em;
+}
+
+h2{
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+h3{
+    font-size: 0.9em;
+}
+
+h4{
+    font-size: 0.7em;
+}
+
+ul {
+    list-style: circle;
+}
+
+ul ul{
+    list-style: square;
+    padding-right: 1.5em;
+}
+
+/* Morteza Style Class*/
+.center{
+    text-align: center;
+}
+
+.logo{
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.title{
+    padding-top: 1em;
+}
+
+.author{
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+
+.overview{
+    display: block;
+    width: 50em;
+    height: 21.5em;
+    padding: 40px 60px;
+}
+
+.overall{
+    direction: rtl;
+    font-size: 7em;
+    /*font-size: 10em;*/
+    line-height: 1em;
+    letter-spacing: -1px;
+    color: black;
+}
+
+.header{
+    font-size: 1.6em;
+    line-height: 1em;
+    background: rgb(120, 147, 255);
+    padding: 20px 10px 20px 10px;
+    margin-left: -60px;
+    margin-right: -60px;
+    text-align: center;
+    color: white;
+}
+
+.content{
+    padding: 20px 30px 10px 10px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+.extra-top{
+    padding-top: 60px;
+}
+
+.near-images{
+    float: right;
+}
+
+.images{
+    float: right;
+    width: 60%;
+    padding-top: 3em;
+    padding-right: 0em;
+    margin-right: 0.6em;
+}
+
+.refer{
+    padding-top: 1em;
+    direction: ltr;
+    font-size: 0.7em;
+}
+
+.question{
+    display: block;
+    padding-top: 2em;
+    width: 225px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.equation{
+    display: block;
+    width: 10em;
+    height: auto;
+    margin: 0 auto;
 }
